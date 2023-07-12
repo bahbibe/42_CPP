@@ -10,7 +10,7 @@ all:$(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(OBG)
+	$(RM) $(OBJ)
 fclean:clean
 	$(RM) $(NAME)
 re:fclean all

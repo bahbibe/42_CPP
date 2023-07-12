@@ -8,18 +8,12 @@ int main()
 	{
 		book.menu();
 		std::getline(std::cin, command);
-		if (std::cin.eof())
+		if (std::cin.eof() || command == "EXIT")
 			break;
 		if (command == "ADD")
 			book.addContact();
 		else if (command == "SEARCH")
-		{
 			book.searchContact();
-			// book.display();
-			//
-		}
 	}
-	
-	
 	return 0;
 }

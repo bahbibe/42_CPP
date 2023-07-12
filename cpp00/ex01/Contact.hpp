@@ -30,4 +30,7 @@ public:
 	void setNickname();
 	void setPhoneNumber();
 	void setDarkestSecret();
+	std::string getFirstName();
+	void displayContact();
+	void displayDetails();
 };
