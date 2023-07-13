@@ -14,6 +14,8 @@ int main()
 			book.addContact();
 		else if (command == "SEARCH")
 			book.searchContact();
+		else
+			std::cout << INVALID << std::endl;
 	}
 	return 0;
 }
