@@ -2,8 +2,8 @@ NAME = Job
 CC = c++ 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-# SRC = Account.cpp tests.cpp
-SRC = main.cpp
+SRC = Account.cpp tests.cpp
+# SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all:$(NAME)
