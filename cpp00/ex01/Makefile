@@ -5,10 +5,10 @@ RM = rm -rf
 SRC = Contact.cpp PhoneBook.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
-run:all
-	./$(NAME)
 all:$(NAME)
 
+run:all
+	./$(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean:

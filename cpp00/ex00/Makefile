@@ -7,6 +7,8 @@ OBJ = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
+run:all
+	./$(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean:
