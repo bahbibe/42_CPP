@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-const int Fixed::_fBits = 8;
+const int Fixed::_fractBits = 8;
 
 //! Defualt Constructor
 Fixed::Fixed():_value(0){
@@ -30,4 +30,9 @@ Fixed& Fixed::operator=(const Fixed& other){
 int Fixed::getRawBits() const {
     std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
+}
+
+void Fixed::setRawBits(int const raw){
+    std::cout << "setRawBits member function called" << std::endl;
+    this->_value = raw;
 }
