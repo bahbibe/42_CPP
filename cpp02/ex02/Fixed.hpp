@@ -32,6 +32,21 @@ public:
     void	setRawBits( int const raw ) ;
     int		getRawBits( void ) const;
     int		toInt() const ;
-    float	toFloat() const ;
+    float   toFloat() const ;
+	bool	operator==(const Fixed& other) const;
+	bool	operator!=(const Fixed& other) const;
+	bool	operator<(const Fixed& other) const;
+	bool	operator>(const Fixed& other) const;
+	bool	operator<=(const Fixed& other) const;
+	bool	operator>=(const Fixed& other) const;
+	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other) const;
+	Fixed	operator/(const Fixed& other) const;
+	Fixed&   operator++();
+	Fixed   operator++(int);
+	Fixed&   operator--();
+	Fixed   operator--(int);
+
 };
 std::ostream& operator<<(std::ostream& out, Fixed const &obj);

@@ -4,17 +4,17 @@ const int Fixed::_fractBits = 8;
 
 //! Defualt Constructor
 Fixed::Fixed():_value(0){
-    std::cout << "Default Constructor called" << std::endl;
+    std::cout << CONSTRUCT << std::endl;
 }
 
 //! Destructor
 Fixed::~Fixed(){
-    std::cout << "Destructor called" << std::endl;
+    std::cout << DESTRUCT << std::endl;
 }
 
 //! Copy constructor
 Fixed::Fixed(const Fixed& copy){
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << YELLOW <<  "Copy constructor called" << std::endl;
     this->_value = copy.getRawBits();
     // TODO to match exactly the subject's output 
     //? *this = copy ;
