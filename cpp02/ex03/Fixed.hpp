@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <cmath>
-
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -26,7 +25,7 @@ public:
     Fixed();
     ~Fixed();
     Fixed(const Fixed& copy);
-    Fixed& operator=( const Fixed& );
+    Fixed& operator=( const Fixed& other);
     Fixed(const int& integer);
     Fixed(const float& floatNb);
     void	setRawBits( int const raw ) ;
@@ -53,4 +52,5 @@ public:
 	static const Fixed& max(const Fixed& low, const Fixed& lower) ;
 
 };
+
 std::ostream& operator<<(std::ostream& out, Fixed const &obj);

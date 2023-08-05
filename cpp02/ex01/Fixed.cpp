@@ -48,12 +48,10 @@ float Fixed::toFloat() const{
 }
 
 int Fixed::getRawBits() const {
-    // std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
 void Fixed::setRawBits(int const raw){
-    // std::cout << "getRawBits member function called" << std::endl;
      this->_value = raw ;
 }
 

@@ -88,11 +88,15 @@ bool    Fixed::operator<=(const Fixed& other) const {
 
 //! arithmetic operators: +, -, *, and /.
 Fixed   Fixed::operator+(const Fixed& other) const {
-   return (this->_value + other._value);
+    Fixed result;
+    result.setRawBits(this->_value + other._value) ;
+    return result;
 }
 
 Fixed   Fixed::operator-(const Fixed& other) const {
-    return (this->_value - other._value);
+    Fixed result;
+    result.setRawBits(this->_value - other._value) ;
+    return result;
 }
 
 Fixed   Fixed::operator*(const Fixed& other) const {
