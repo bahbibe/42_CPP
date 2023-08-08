@@ -12,7 +12,7 @@ run:all
 $(NAME):$(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(OBJ) $(OUT)
+	$(RM) $(OBJ)
 fclean:clean
 	$(RM) $(NAME)
 re:fclean all

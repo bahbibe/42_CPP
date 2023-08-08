@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "ClapTrap.hpp"
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -8,16 +9,17 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
-#define DEFSCAV GREEN "ScavTrap Default Constructor called" RESET
-#define PARAMSCAV GREEN "ScavTrap Parameterized Constructor called" RESET
-#define DESTSCAV GREEN "ScavTrap Destructor called" RESET
-class ScavTrap
+#define DEFSCAV YELLOW "ScavTrap Default Constructor called" RESET
+#define PARAMSCAV YELLOW "ScavTrap Parameterized Constructor called" RESET
+#define DESTSCAV YELLOW "ScavTrap Destructor called" RESET
+
+class ScavTrap : public ClapTrap
 {
-private:
-	/* data */
 public:
-	ScavTrap(/* args */);
+	ScavTrap();
 	~ScavTrap();
+	ScavTrap(const std::string &name);
+	ScavTrap(const ScavTrap &copy);
+	ScavTrap& operator=(const ScavTrap& other);
+	void guardGate();
 };
-
-

@@ -13,7 +13,7 @@
 #define DESTCLAP GREEN "ClapTrap Destructor called" RESET
 class ClapTrap
 {
-private:
+protected:
 	std::string _name ;
 	int _hitPoints ;
 	int _energyPoints ;
