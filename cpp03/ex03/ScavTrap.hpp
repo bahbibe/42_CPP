@@ -5,7 +5,7 @@
 #define PARAMSCAV YELLOW "ScavTrap Parameterized Constructor called" RESET
 #define DESTSCAV YELLOW "ScavTrap Destructor called" RESET
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
 	ScavTrap();
