@@ -1,9 +1,9 @@
 #pragma once
 #include "FragTrap.hpp"
-#define DEFDIAMOND MAGENTA "ClapTrap Default Constructor called" RESET
-#define PARAMDIAMOND MAGENTA "ClapTrap Parameterized Constructor called" RESET
-#define DESTDIAMOND MAGENTA "ClapTrap Destructor called" RESET
-#define COPYDIAMOND MAGENTA "ClapTrap Copy Constructor called" RESET
+#define DEFDIAMOND RED "DiamondTrap Default Constructor called" RESET
+#define PARAMDIAMOND RED "DiamondTrap Parameterized Constructor called" RESET
+#define DESTDIAMOND RED "DiamondTrap Destructor called" RESET
+#define COPYDIAMOND RED "DiamondTrap Copy Constructor called" RESET
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
@@ -15,5 +15,6 @@ public:
 	DiamondTrap(const std::string &name);
 	DiamondTrap(const DiamondTrap &copy);
 	DiamondTrap &operator=(const DiamondTrap &other);
+	void attack(const std::string &target);
 	void whoAmI();
 };
