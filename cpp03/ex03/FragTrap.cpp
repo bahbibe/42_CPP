@@ -4,6 +4,7 @@ FragTrap::FragTrap()
 {
 	this->_name = "Random";
 	this->_hitPoints = 100;
+	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 
 	std::cout << DEFFRAG << std::endl;
@@ -13,6 +14,7 @@ FragTrap::FragTrap(const std::string &name)
 {
 	this->_name = name;
 	this->_hitPoints = 100;
+	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 	std::cout << PARAMFRAG << std::endl;
 }

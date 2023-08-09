@@ -8,6 +8,8 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
+#define BOLD "\033[1;37m"
+#define ITALIC "\033[3m"
 #define DEFCLAP GREEN "ClapTrap Default Constructor called" RESET
 #define PARAMCLAP GREEN "ClapTrap Parameterized Constructor called" RESET
 #define DESTCLAP GREEN "ClapTrap Destructor called" RESET

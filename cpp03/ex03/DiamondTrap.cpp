@@ -4,7 +4,7 @@ DiamondTrap::DiamondTrap()
 {
 	this->_name = "Random";
 	ClapTrap::_name = this->_name + "_clap_name";
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = 50;
 	std::cout << DEFDIAMOND << std::endl;
 }
 
@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 {
 	this->_name = name;
 	ClapTrap::_name = name + "_clap_name";
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = 50;
 	std::cout << PARAMDIAMOND << std::endl;
 }
 DiamondTrap::~DiamondTrap() { std::cout << DESTDIAMOND << std::endl; }
@@ -39,10 +39,10 @@ void DiamondTrap::attack(const std::string &target)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap name: " << this->_name << std::endl;
+	std::cout << BOLD ITALIC << "DiamondTrap name: " << this->_name << std::endl;
 	std::cout << "ClapTrap name: " << ClapTrap::_name << std::endl;
 	std::cout << "DiamondTrap energy points: " << this->_energyPoints << std::endl;
-	// std::cout << "DiamondTrap attack damage: " << this->_attackDamage << std::endl;
-	// std::cout << "DiamondTrap hit points: " << this->_hitPoints << std::endl;
+	std::cout << "DiamondTrap attack damage: " << this->_attackDamage << std::endl;
+	std::cout << "DiamondTrap hit points: " << this->_hitPoints << RESET <<  std::endl;
 
 }
