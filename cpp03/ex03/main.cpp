@@ -1,15 +1,18 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
 int main( void )
 {
-	FragTrap b;
+	DiamondTrap diamond("Diamond");
+	DiamondTrap diamond2(diamond);
+	// DiamondTrap diamond3("Diamond3");
+	// diamond3 = diamond2;
+	// diamond.attack("Enemy");
+	// diamond.takeDamage(10);
+	// diamond.beRepaired(10);
+	// diamond.highFivesGuys();
+	// diamond.guardGate();
+	// diamond.whoAmI();
 
-	b.highFivesGuys();
-	// ScavTrap a("random");
-	// a.attack("you");
-	// a.takeDamage(10);
-	// a.takeDamage(10);
-	// a.beRepaired(10);
-	// a.takeDamage(10);
-	// a.takeDamage(10);
+
 	return 0;
 }

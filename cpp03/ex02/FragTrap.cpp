@@ -24,6 +24,7 @@ FragTrap::~FragTrap() { std::cout << DESTFRAG << std::endl; }
 FragTrap::FragTrap(const FragTrap &copy)
 {
 	*this = copy;
+	std::cout << COPYFRAG << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &copy)

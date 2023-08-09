@@ -4,6 +4,7 @@
 #define DEFFRAG CYAN "FragTrap Default Constructor called" RESET
 #define PARAMFRAG CYAN "FragTrap Parameterized Constructor called" RESET
 #define DESTFRAG CYAN "FragTrap Destructor called" RESET
+#define COPYFRAG CYAN "FragTrap Copy Constructor called" RESET
 
 class FragTrap : virtual public ClapTrap
 {

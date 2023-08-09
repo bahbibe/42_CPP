@@ -15,6 +15,7 @@ ClapTrap::~ClapTrap() { std::cout << DESTCLAP << std::endl;}
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	*this = copy;
+	std::cout << COPYCLAP << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &copy)

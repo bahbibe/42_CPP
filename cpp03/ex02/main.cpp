@@ -1,15 +1,13 @@
 #include "FragTrap.hpp"
 int main( void )
 {
-	FragTrap b;
-
-	b.highFivesGuys();
-	// ScavTrap a("random");
-	// a.attack("you");
-	// a.takeDamage(10);
-	// a.takeDamage(10);
-	// a.beRepaired(10);
-	// a.takeDamage(10);
-	// a.takeDamage(10);
+	FragTrap frag("Frag");
+	FragTrap frag2(frag);
+	FragTrap frag3("Frag3");
+	frag3 = frag2;
+	frag.attack("Enemy");
+	frag.takeDamage(10);
+	frag.beRepaired(10);
+	frag.highFivesGuys();
 	return 0;
 }

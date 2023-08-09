@@ -11,6 +11,7 @@
 #define DEFCLAP GREEN "ClapTrap Default Constructor called" RESET
 #define PARAMCLAP GREEN "ClapTrap Parameterized Constructor called" RESET
 #define DESTCLAP GREEN "ClapTrap Destructor called" RESET
+#define COPYCLAP GREEN "ClapTrap Copy Constructor called" RESET
 class ClapTrap
 {
 private:

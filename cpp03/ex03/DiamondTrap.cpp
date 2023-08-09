@@ -20,6 +20,7 @@ DiamondTrap::~DiamondTrap() { std::cout << DESTDIAMOND << std::endl; }
 DiamondTrap::DiamondTrap(const DiamondTrap &copy)
 {
 	*this = copy;
+	std::cout << COPYDIAMOND << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)

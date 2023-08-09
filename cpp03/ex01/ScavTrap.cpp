@@ -24,6 +24,7 @@ ScavTrap::~ScavTrap() { std::cout << DESTSCAV << std::endl;}
 ScavTrap::ScavTrap(const ScavTrap &copy)
 {
 	*this = copy;
+	std::cout << COPYSCAV << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
