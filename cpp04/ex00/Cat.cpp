@@ -1,11 +1,20 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") { std::cout << YELLOW << "Cat " <<  DEF << std::endl; }
-Cat::~Cat() { std::cout << YELLOW << "Cat " << DEST << std::endl; }
-Cat::Cat(const std::string &type) : Animal(type) { std::cout << YELLOW << "Cat " << PARAM << std::endl; }
-Cat::Cat(const Cat &copy) 
-{ 
-	std::cout << YELLOW << "Cat " << COPY << std::endl; 
+Cat::Cat() : Animal("Cat")
+{
+	std::cout << CAT DEFAULT << std::endl;
+}
+Cat::~Cat()
+{
+	std::cout << CAT DESCTRUCTOR << std::endl;
+}
+Cat::Cat(const std::string &type) : Animal(type)
+{
+	std::cout << CAT PARAMETER << std::endl;
+}
+Cat::Cat(const Cat &copy)
+{
+	std::cout << CAT COPY << std::endl;
 	*this = copy;
 }
 Cat &Cat::operator=(const Cat &other)
@@ -15,4 +24,7 @@ Cat &Cat::operator=(const Cat &other)
 	return (*this);
 }
 
-void Cat::makeSound() const { std::cout << "Meow" << std::endl; }
+void Cat::makeSound() const
+{
+	std::cout << CAT " Meow" << std::endl;
+}

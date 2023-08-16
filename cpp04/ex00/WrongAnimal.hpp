@@ -1,10 +1,17 @@
 #pragma once 
-#include <iostream>
+
+#include "Macros.hpp"
+
 class WrongAnimal
 {
-private:
-	/* data */
+protected:
+	std::string type;
 public:
-	WrongAnimal(/* args */);
+	WrongAnimal();
 	~WrongAnimal();
+	WrongAnimal(const std::string &type);
+	WrongAnimal(const WrongAnimal &copy);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	std::string getType() const;
+	void makeSound() const;
 };
