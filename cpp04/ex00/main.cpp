@@ -36,12 +36,13 @@ int main2()
 	delete i;
 	return 0;
 }
+ 
 
 int main()
 {
-	// std::cout << BLACK_BOLD  << "Animal Default constructor" << std::endl;
 	main1();
 	std::cout << "------------------------------" << std::endl;
 	main2();
+	
 	return 0;
 }
