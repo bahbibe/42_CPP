@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "Macros.hpp"
 
 class Brain
 {
@@ -11,6 +12,4 @@ public:
     Brain(const Brain &copy);
     Brain &operator=(const Brain &other);
     ~Brain();
-    std::string getIdea(int index) const;
-    void setIdea(int index, const std::string &idea);
 };
