@@ -1,20 +1,23 @@
 NAME = Animal
-CC = clang++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+CC = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 .cpp.o:
-	$(CC) $(CPPFLAGS) -c $< -o $@
+	@$(CC) $(CPPFLAGS) -c $< -o $@
 all:$(NAME)
-
+	
 run:all
-	./$(NAME)
-	@make clean
+	@./$(NAME)
+	@make -s clean
 $(NAME):$(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 fclean:clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 re:fclean all
+
+leaks:all
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 2>&1 | grep total

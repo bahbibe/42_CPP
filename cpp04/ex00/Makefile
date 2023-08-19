@@ -1,6 +1,6 @@
 NAME = Animal
 CC = c++
-CPPFLAGS = -Wall -Wextra -Werror 
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,3 +18,6 @@ clean:
 fclean:clean
 	@$(RM) $(NAME)
 re:fclean all
+
+leaks:all
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) 2>&1 | grep total

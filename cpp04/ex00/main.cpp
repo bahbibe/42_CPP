@@ -4,7 +4,6 @@
 
 int main1()
 {
-
 	const Animal *meta = new Animal();
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
@@ -43,6 +42,5 @@ int main()
 	main1();
 	std::cout << "------------------------------" << std::endl;
 	main2();
-	
 	return 0;
 }
