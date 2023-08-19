@@ -23,16 +23,16 @@ int main1()
 int main2()
 {
 	const WrongAnimal *meta = new WrongAnimal();
-	const Animal *j = new Dog();
+	// const Animal *j = new Dog();
 	const WrongAnimal *i = new WrongCat();
 	// std::cout << meta->getType() << " " << std::endl;
 	// std::cout << j->getType() << " " << std::endl;
 	// std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); // will output the cat sound!
-	j->makeSound();
+	// j->makeSound();
 	meta->makeSound();
 	delete meta;
-	delete j;
+	// delete j;
 	delete i;
 	return 0;
 }

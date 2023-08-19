@@ -15,22 +15,20 @@ WrongCat::WrongCat(const std::string &type) : WrongAnimal(type)
     std::cout << WRONG_CAT PARAMETER << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &copy)
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy._type)
 {
     std::cout << WRONG_CAT COPY << std::endl;
-    *this = copy;
+    this->_type = copy._type;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &other)
 {
     if (this != &other)
-        this->type = other.type;
+        this->_type = other._type;
     return (*this);
 }
 
 void WrongCat::makeSound() const
 {
-    std::cout << WRONG_CAT " Meow" << std::endl;
+    std::cout << WRONG_CAT " Moooo" << std::endl;
 }
-
-
