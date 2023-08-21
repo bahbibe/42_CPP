@@ -1,4 +1,4 @@
-NAME = WorldOnFire
+NAME = Abstract
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
