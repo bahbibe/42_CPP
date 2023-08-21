@@ -13,7 +13,6 @@ Dog::~Dog()
 Dog::Dog(const std::string &type) : Animal(type)
 {
 	std::cout << DOG PARAMETER << std::endl;
-	//! this->_type = type;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy._type)

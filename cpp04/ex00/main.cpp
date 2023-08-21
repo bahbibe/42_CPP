@@ -16,7 +16,6 @@ int main1()
 	delete j;
 	delete i;
 	return 0;
-	return 0;
 }
 
 int main2()

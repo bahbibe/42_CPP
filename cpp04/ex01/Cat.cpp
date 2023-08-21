@@ -13,7 +13,6 @@ Cat::~Cat()
 Cat::Cat(const std::string &type) : Animal(type)
 {
 	std::cout << CAT PARAMETER << std::endl;
-	//! this->_type = type;
 }
 
 Cat::Cat(const Cat &copy) : Animal(copy._type)
