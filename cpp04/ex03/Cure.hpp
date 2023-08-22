@@ -1,19 +1,15 @@
 #pragma once 
 #include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
-private:
-    /* data */
+
 public:
-    Cure(/* args */);
+    Cure();
     ~Cure();
+    Cure(Cure const& cure);
+    Cure& operator=(Cure const& cure);
+    AMateria* clone() const;
 };
 
-Cure::Cure(/* args */)
-{
-}
 
-Cure::~Cure()
-{
-}

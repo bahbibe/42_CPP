@@ -1,12 +1,15 @@
 #pragma once
 #include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 private:
-    /* data */
+    std::string _type;
 public:
-    Ice(/* args */);
+    Ice();
     ~Ice();
+    Ice(Ice const& ice);
+    Ice& operator=(Ice const& ice);
+    AMateria* clone() const;
 };
 

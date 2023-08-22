@@ -2,7 +2,6 @@
 
 AMateria::AMateria(std::string const &type) : _type(type)
 {
-
 }
 
 AMateria::AMateria(AMateria const &copy)
@@ -30,5 +29,5 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 {
-    (void)target;
+    (void) target;
 }
