@@ -2,23 +2,23 @@
 
 AAnimal::AAnimal()
 {
-	std::cout << ANIMAL DEFAULT << std::endl;
+	std::cout << "AAnimal" DEFAULT << std::endl;
 }
 
 AAnimal::~AAnimal()
 {
-	std::cout << ANIMAL DESCTRUCTOR << std::endl;
+	std::cout << "AAnimal" DESCTRUCTOR << std::endl;
 }
 
 AAnimal::AAnimal(const std::string &type)
 {
-	std::cout << ANIMAL PARAMETER << std::endl;
+	std::cout << "AAnimal" PARAMETER << std::endl;
 	this->_type = type;
 }
 
 AAnimal::AAnimal(const AAnimal &copy)
 {
-	std::cout << ANIMAL COPY << std::endl;
+	std::cout << "AAnimal" COPY << std::endl;
 	this->_type = copy._type;
 }
 
@@ -31,7 +31,7 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 
 void AAnimal::makeSound() const
 {
-	std::cout << ANIMAL " Makes Sound" << std::endl;
+	std::cout << BOLD "AAnimal" RESET << std::endl;
 }
 
 std::string const &AAnimal::getType() const

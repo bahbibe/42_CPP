@@ -11,17 +11,14 @@ Cat::~Cat()
 	delete this->_brain;
 }
 
-Cat::Cat(const std::string &type, Brain *brain) : Animal(type)
+Cat::Cat(const std::string &type, Brain *brain) : Animal(type) , _brain(brain)
 {
 	std::cout << "Cat" PARAMETER << std::endl;
-	this->_type = type;
-	this->_brain = new Brain(*brain);
 }
-Cat::Cat(const Cat &copy) : Animal(copy._type)
+
+Cat::Cat(const Cat &copy) : Animal(copy._type), _brain(new Brain(*copy._brain))
 {
 	std::cout << "Cat" COPY << std::endl;
-	this->_type = copy._type;
-	this->_brain = new Brain(*copy._brain);
 }
 
 Cat &Cat::operator=(const Cat &other)

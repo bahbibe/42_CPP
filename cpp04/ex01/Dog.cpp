@@ -15,7 +15,7 @@ Dog::Dog(const std::string &type, Brain *brain) : Animal(type)
 {
 	std::cout << "Dog" PARAMETER << std::endl;
 	this->_type = type;
-	this->_brain = new Brain(*brain);
+	this->_brain = brain;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy._type)
