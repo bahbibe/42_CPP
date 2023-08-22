@@ -8,7 +8,7 @@ private:
 public:
 	Cat();
 	~Cat();
-	Cat(const std::string &type);
+	Cat(const std::string &type, Brain *brain);
 	Cat(const Cat &copy);
 	Cat &operator=(const Cat &other);
 	void makeSound() const;

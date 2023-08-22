@@ -2,23 +2,23 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << WRONG DEFAULT << std::endl;
+    std::cout <<   "Wrong Animal" DEFAULT << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << WRONG DESCTRUCTOR << std::endl;
+    std::cout << "Wrong Animal" DESCTRUCTOR << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const std::string &type)
 {
-    std::cout << WRONG PARAMETER << std::endl;
+    std::cout <<  "Wrong Animal" PARAMETER << std::endl;
     this->_type = type;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-    std::cout << WRONG COPY << std::endl;
+    std::cout <<  "Wrong Animal" COPY << std::endl;
     this->_type = copy._type;
 }
 
@@ -36,5 +36,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-    std::cout << WRONG " Makes Sound" << std::endl;
+    std::cout << BOLD "Wrong Animal Makes Sound" RESET << std::endl;
 }

@@ -2,22 +2,22 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	std::cout << CAT DEFAULT << std::endl;
+	std::cout << "Cat" DEFAULT << std::endl;
 }
 
 Cat::~Cat()
 {
-	std::cout << CAT DESCTRUCTOR << std::endl;
+	std::cout << "Cat" DESCTRUCTOR << std::endl;
 }
 
 Cat::Cat(const std::string &type) : Animal(type)
 {
-	std::cout << CAT PARAMETER << std::endl;
+	std::cout << "Cat" PARAMETER << std::endl;
 }
 
 Cat::Cat(const Cat &copy) : Animal(copy._type)
 {
-	std::cout << CAT COPY << std::endl;
+	std::cout << "Cat" COPY << std::endl;
 	this->_type = copy._type;
 }
 
@@ -30,5 +30,5 @@ Cat &Cat::operator=(const Cat &other)
 
 void Cat::makeSound() const
 {
-	std::cout << CAT " Meow" << std::endl;
+	std::cout << BOLD "Cat Meow" RESET << std::endl;
 }

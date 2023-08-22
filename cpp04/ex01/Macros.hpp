@@ -13,13 +13,7 @@
 #define BOLD "\033[1;37m"
 #define ITALIC "\033[3m"
 #define UNDERLINE "\033[4m"
-#define WRONG_CAT ITALIC "Wrong cat" RESET
 #define DEFAULT GREEN " default constructor" RESET
 #define DESCTRUCTOR RED " desctructor" RESET
 #define COPY CYAN " copy constructor" RESET
 #define PARAMETER YELLOW" parameter constructor" RESET
-#define ANIMAL BOLD "Animal" RESET
-#define CAT "Cat" RESET
-#define DOG "Dog" RESET
-#define WRONG ITALIC "Wrong animal" RESET
-#define BRAIN "Brain" RESET

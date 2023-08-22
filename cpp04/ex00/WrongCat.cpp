@@ -2,22 +2,22 @@
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-    std::cout << WRONG_CAT DEFAULT << std::endl;
+    std::cout << "Wrong Cat" DEFAULT << std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-    std::cout << WRONG_CAT DESCTRUCTOR << std::endl;
+    std::cout << "Wrong Cat" DESCTRUCTOR << std::endl;
 }
 
 WrongCat::WrongCat(const std::string &type) : WrongAnimal(type)
 {
-    std::cout << WRONG_CAT PARAMETER << std::endl;
+    std::cout << "Wrong Cat" PARAMETER << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy._type)
 {
-    std::cout << WRONG_CAT COPY << std::endl;
+    std::cout << "Wrong Cat" COPY << std::endl;
     this->_type = copy._type;
 }
 
@@ -30,5 +30,5 @@ WrongCat &WrongCat::operator=(const WrongCat &other)
 
 void WrongCat::makeSound() const
 {
-    std::cout << WRONG_CAT " Moooo" << std::endl;
+    std::cout << "Wrong Cat Moooo" << std::endl;
 }

@@ -10,10 +10,3 @@ public:
     ~Ice();
 };
 
-Ice::Ice(/* args */)
-{
-}
-
-Ice::~Ice()
-{
-}

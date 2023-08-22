@@ -1,5 +1,6 @@
 #pragma once
 #include "Macros.hpp"
+#include "Brain.hpp"
 
 class Animal
 {
