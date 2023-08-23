@@ -8,8 +8,6 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
-    for (int i = 0; i < 4; i++)
-        delete this->_materia[i];
 }
 
 MateriaSource::MateriaSource(MateriaSource const &copy)
@@ -41,14 +39,8 @@ void MateriaSource::learnMateria(AMateria *materia)
         if (!this->_materia[i])
         {
             this->_materia[i] = materia;
-            break;
+            return;
         }
-
-        // else
-        // {
-        //     delete this->_materia[i];
-        //     this->_materia[i] = materia;
-        // }
     }
 }
 

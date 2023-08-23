@@ -52,10 +52,9 @@ void Character::equip(AMateria *m)
         if (!this->_inventory[i])
         {
             this->_inventory[i] = m;
-            break;
+            return;
         }
     }
-    
 }
 
 void Character::unequip(int idx)

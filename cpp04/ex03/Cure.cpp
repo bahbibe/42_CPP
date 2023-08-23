@@ -8,7 +8,7 @@ Cure::~Cure()
 {
 }
 
-Cure::Cure(Cure const &copy)
+Cure::Cure(Cure const &copy) : AMateria(copy)
 {
     this->_type = copy._type;
 }

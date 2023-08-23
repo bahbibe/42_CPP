@@ -20,7 +20,7 @@ int main2()
     me->use(1, *bob);
     delete bob;
     delete me;
-    // delete src;
+    delete src;
     return(0);
 }
 
