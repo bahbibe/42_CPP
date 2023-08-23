@@ -37,6 +37,7 @@ Character &Character::operator=(Character const &character)
             delete this->_inventory[i];
         this->_inventory[i] = character._inventory[i]->clone();
     }
+    return *this;
 }
 
 std::string const &Character::getName() const
@@ -46,10 +47,21 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if (!this->_inventory[i])
+        {
+            this->_inventory[i] = m;
+            break;
+        }
+    }
+    
 }
 
 void Character::unequip(int idx)
 {
+    if (idx >= 0 && idx <= 3)
+        this->_inventory[idx] = 0;
 }
 
 void Character::use(int idx, ICharacter &target)

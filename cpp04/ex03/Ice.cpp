@@ -9,7 +9,7 @@ Ice::~Ice()
 {
 }
 
-Ice::Ice(Ice const &copy) //! may need amateria 
+Ice::Ice(Ice const &copy)
 {
     this->_type = copy._type;
 }
@@ -28,5 +28,5 @@ AMateria *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-    std::cout << "* shoots an ice bolt at" << target.getName() << "*" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }

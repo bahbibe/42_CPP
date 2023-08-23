@@ -21,6 +21,7 @@ AMateria::AMateria(AMateria const &copy)
 AMateria &AMateria::operator=(AMateria const &other)
 {
     (void) other;
+    return *this;
 }
 
 std::string const &AMateria::getType() const

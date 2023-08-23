@@ -1,6 +1,8 @@
 #pragma once
 #include "Macros.hpp"
 #include "ICharacter.hpp"
+
+class ICharacter ;
 class AMateria
 {
 protected:
