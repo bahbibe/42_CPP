@@ -16,4 +16,5 @@ public:
     void unequip(int idx);
     void use(int idx, ICharacter &target);
     std::string const &getName() const;
+    AMateria *save(int idx);
 };

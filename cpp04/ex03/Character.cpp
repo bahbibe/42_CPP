@@ -15,7 +15,18 @@ Character::Character(std::string const &name) : _name(name)
 Character::~Character()
 {
     for (int i = 0; i < 4; i++)
-        delete this->_inventory[i];
+    {
+        if(this->_inventory[i])
+        {
+            delete this->_inventory[i];
+            for(int j = i+1;j < 4 ; j++)
+            {
+                if(_inventory[i] == _inventory[j])
+                    _inventory[j] = 0;
+            }
+        }
+        
+    }
 }
 
 Character::Character(Character const &character)
@@ -67,4 +78,9 @@ void Character::use(int idx, ICharacter &target)
 {
     if (idx >= 0 && idx <= 3 && this->_inventory[idx])
         this->_inventory[idx]->use(target);
+}
+
+AMateria *Character::save(int idx)
+{
+    return this->_inventory[idx];
 }
