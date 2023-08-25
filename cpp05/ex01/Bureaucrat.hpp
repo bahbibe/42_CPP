@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Form.hpp"
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -15,6 +16,8 @@
 #define DESCTRUCTOR RED " desctructor" RESET
 #define COPY CYAN " copy constructor" RESET
 #define PARAMETER YELLOW " parameter constructor" RESET
+
+class Form;
 
 class Bureaucrat
 {
@@ -32,6 +35,7 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+    void signForm(Form &form) const ;
 
     class GradeTooHighException : public std::exception
     {

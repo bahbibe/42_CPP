@@ -5,14 +5,17 @@ int main()
     std::cout << BOLD << "Invalid Bureaucrat" << RESET << std::endl;
     try
     {
-        Bureaucrat b3("b3",160);
+        Bureaucrat b3("b3", 2);
+        b3.incrementGrade();
+        b3.incrementGrade();
+        Bureaucrat b4(b3);
         std::cout << b3;
     }
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-        try
+    try
     {
         Bureaucrat b4("b4", 151);
         std::cout << b4;
@@ -21,7 +24,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << BOLD << "Too High Bureaucrat 🚬" << RESET << std::endl;
+    std::cout << BOLD << "Too High Bureaucrat " << RESET << std::endl;
     try
     {
         Bureaucrat b1("b1", 1);
@@ -32,7 +35,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << BOLD << "Too Low Bureaucrat 🥲" << RESET << std::endl;
+    std::cout << BOLD << "Too Low Bureaucrat " << RESET << std::endl;
     try
     {
         Bureaucrat b2("b2", 150);
