@@ -1,7 +1,7 @@
 NAME = Convert
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
-SRC = main.cpp ScalarConverter.cpp Convert.cpp
+SRC = main.cpp ScalarConverter.cpp
 OBJ = $(SRC:.cpp=.o)
 
 .cpp.o:

@@ -1,10 +1,8 @@
 #pragma once
-#include <string>
 #include <iostream>
-#include <iomanip>
-#include <cmath>
-#include <limits>
 #include <sstream>
+#include <iomanip>
+#include <climits>
 #include <cstdio>
 
 class ScalarConverter
@@ -15,5 +13,5 @@ private:
     ScalarConverter &operator=(ScalarConverter const &other);
     ~ScalarConverter();
 public:
-    static void convert(std::string &input);
+    static void convert(std::string input);
 };
