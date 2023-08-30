@@ -58,8 +58,10 @@ void ScalarConverter::convert(std::string input)
         {
             if (d >= 32 && d <= 126)
                 std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
-            else
+            else if ((d >= 0 && d <= 31) || d == 127)
                 std::cout << "char: Non displayable" << std::endl;
+            else
+                std::cout << "char: impossible" << std::endl;
             if (d >= INT_MIN && d <= INT_MAX)
                 std::cout << "int: " << static_cast<int>(d) << std::endl;
             else
