@@ -74,7 +74,6 @@ void btc(std::ifstream &file)
                 throw std::runtime_error("bad input => " + line);
             if (i)
             {
-
                 double val = checkValue(value);
                 std::map<std::string, double>::iterator it;
                 it = data.find(date);
@@ -85,7 +84,8 @@ void btc(std::ifstream &file)
                         throw std::runtime_error("no data for this date => " + date);
                     it--;
                 }
-                std::cout << it->first << " => " << val << " = " << it->second * val << std::endl;
+                std::cout << it->first << " => " << std::setprecision(0) << val << " = "
+                          << std::setprecision(2) << val * it->second << std::endl;
             }
         }
         catch (std::exception &e)
