@@ -1,5 +1,23 @@
 #include "BitcoinExchange.hpp"
 
+void getData(std::map<std::string, double> &data)
+{
+    std::ifstream file("data.csv");
+    if (!file.is_open())
+        throw std::ios_base::failure("failed to open database file");
+    std::string line;
+    std::getline(file, line);
+    while (std::getline(file, line))
+    {
+        std::stringstream sstream;
+        std::string date, value;
+        sstream << line;
+        std::getline(sstream, date, ',');
+        sstream >> value;
+        data[date] = std::strtod(value.c_str(), NULL);
+    }
+}
+
 bool checkDate(std::string &date)
 {
     int d, m, y;
@@ -28,25 +46,22 @@ double checkValue(std::string &value)
     char *end;
     double val = std::strtod(value.c_str(), &end);
     if (end == value.c_str() || *end != '\0')
-        throw std::runtime_error(value);
+        throw std::runtime_error("bad input => " + value);
     if (val < 0)
-        throw std::runtime_error("not a positive number.");
+        throw std::runtime_error("not a positive number => " + value);
     if (val > 1000)
-        throw std::runtime_error("too large number.");
+        throw std::runtime_error("too large number => " + value);
     return val;
 }
 
 void btc(std::ifstream &file)
 {
     std::stringstream ss;
-    std::string line;
-    std::string date;
-    std::string lim;
-    std::string value;
+    std::string line, date, lim, value;
+    std::map<std::string, double> data;
+    getData(data);
     int i = 0;
-    std::map<std::string, double> btc;
-    std::map<std::string, double>::iterator it;
-    while (getline(file, line))
+    while (std::getline(file, line))
     {
         try
         {
@@ -54,11 +69,24 @@ void btc(std::ifstream &file)
             ss << line;
             ss >> date >> lim >> value;
             if (!i && (date != "date" || lim != "|" || value != "value" || line.length() != date.length() + value.length() + 3))
+                throw std::runtime_error("bad header => " + line);
+            if (i && (line.length() != (13 + value.length()) || !checkDate(date) || lim != "|"))
                 throw std::runtime_error("bad input => " + line);
-            if (i && (line.length() != (13 + value.length()) || !checkDate(date) || lim != "|" || !checkValue(value)))
-                throw std::runtime_error("bad input => " + line);
-            // if (i)
-            //     btc.insert(std::make_pair(date, checkValue(value)));
+            if (i)
+            {
+
+                double val = checkValue(value);
+                std::map<std::string, double>::iterator it;
+                it = data.find(date);
+                if (it == data.end())
+                {
+                    it = data.lower_bound(date);
+                    if (it == data.begin())
+                        throw std::runtime_error("no data for this date => " + date);
+                    it--;
+                }
+                std::cout << it->first << " => " << val << " = " << it->second * val << std::endl;
+            }
         }
         catch (std::exception &e)
         {
