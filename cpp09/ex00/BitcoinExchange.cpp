@@ -34,12 +34,14 @@ bool checkDate(std::string &date)
         tm.tm_year = y - 1900;
         tm.tm_isdst = -1;
         std::time_t time = mktime(&tm);
+        std::time_t now = std::time(NULL);
         std::tm *valid = localtime(&time);
-        if (valid->tm_mday == d && valid->tm_mon == m - 1 && valid->tm_year == y - 1900)
+        if (valid->tm_mday == d && valid->tm_mon == m - 1 && valid->tm_year == y - 1900 && time <= now)
             return true;
     }
     throw std::runtime_error("wrong date " + date);
 }
+
 
 double checkValue(std::string &value)
 {
