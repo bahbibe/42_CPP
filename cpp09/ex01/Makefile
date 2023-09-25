@@ -10,7 +10,7 @@ OBJ = $(SRC:.cpp=.o)
 all:$(NAME)
 	
 run:all
-	@./$(NAME) input.csv
+	@./$(NAME) 
 	@make -s fclean
 
 $(NAME):$(OBJ)

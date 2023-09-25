@@ -8,5 +8,4 @@
 #include <cstring>
 #include <map>
 
-
 void btc(std::ifstream &file);
