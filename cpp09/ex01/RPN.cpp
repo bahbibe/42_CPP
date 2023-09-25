@@ -2,7 +2,7 @@
 
 bool is_op(char c)
 {
-    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '%');
+    return (c == '+' || c == '-' || c == '*' || c == '/');
 }
 
 void rpn(std::string input)
@@ -37,9 +37,6 @@ void rpn(std::string input)
                 break;
             case '/':
                 stack.push(b / a);
-                break;
-            case '%':
-                stack.push(b % a);
                 break;
             }
         }

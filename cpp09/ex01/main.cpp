@@ -2,11 +2,13 @@
 
 int main(int argc, char const *argv[])
 {
-    std::string input = std::string(argv[1]);
     try
     {
-        if (argc != 2)
-            throw std::invalid_argument("usage: ./rpn [input]");
+        if (argc == 1)
+            throw std::runtime_error("Usage: ./RPN [expression]");
+        std::string input = "";
+        for (int i = 1; i < argc; i++)
+            input += argv[i];
         rpn(input);
     }
     catch (std::exception &e)
