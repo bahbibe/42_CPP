@@ -1,18 +1,32 @@
 #include "PmergeMe.hpp"
 
-int main(int ac, char **av)
-{
-    for (int i = 1; i < ac; i++)
-        {
-            std::vector<int> v;
-            std::stringstream ss(av[i]);
-            int n;
-            while (ss >> n)
-                v.push_back(n);
-            std::sort(v.begin(), v.end());
-            for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
-                std::cout << *it << " ";
-            std::cout << std::endl;
-        }
 
+
+int main(int argc, char const *argv[])
+{
+    try
+    {
+        if (argc == 1)
+            throw std::runtime_error("Error");
+        std::vector<int> v;
+        std::deque<int> d;
+        for (int i = 1; i < argc; i++)
+            if (!fillContainers(argv[i], v, d))
+                throw std::runtime_error("Error");
+        printContainer(v, "before");
+        clock_t start = clock();
+        mergeInsertVec(v.begin(), v.end());
+        clock_t end = clock();
+        printContainer(v, "after");
+        timingVec(start, end, v);
+        start = clock();
+        mergeInsertDeq(d.begin(), d.end());
+        end = clock();
+        timingDeq(start, end, d);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    return 0;
 }
