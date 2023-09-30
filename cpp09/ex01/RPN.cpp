@@ -36,6 +36,8 @@ void rpn(std::string input)
                 stack.push(b * a);
                 break;
             case '/':
+                if (!a)
+                    throw std::runtime_error("Division by zero");
                 stack.push(b / a);
                 break;
             }

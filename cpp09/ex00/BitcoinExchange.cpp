@@ -49,6 +49,9 @@ double checkValue(std::string &value)
     double val = std::strtod(value.c_str(), &end);
     if (end == value.c_str() || *end != '\0')
         throw std::runtime_error("bad input => " + value);
+    unsigned int dotPos = value.find('.');
+    if (!dotPos || dotPos == value.length() - 1)    
+        throw std::runtime_error("bad input => " + value);
     if (val < 0)
         throw std::runtime_error("not a positive number => " + value);
     if (val > 1000)

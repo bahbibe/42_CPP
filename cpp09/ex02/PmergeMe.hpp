@@ -6,6 +6,9 @@
 #include <algorithm>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
 
 bool fillContainers(std::string input, std::vector<int> &v, std::deque<int> &d);
 void printContainer(std::vector<int> &v, const std::string &str);

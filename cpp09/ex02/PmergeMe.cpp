@@ -2,15 +2,15 @@
 
 void timingVec(clock_t start, clock_t end, std::vector<int> &v)
 {
-    std::cout << "Time to process a range of " << v.size() << " elements with std::vector : "
-              << (end - start) / (double)(CLOCKS_PER_SEC / 1000000) << " us"
+    std::cout << "Time to process a range of " << v.size() << " elements with " GREEN "std::vector " RESET
+              << (end - start) / (double)(CLOCKS_PER_SEC / 1000000) << ": us"
               << std::endl;
 }
 
 void timingDeq(clock_t start, clock_t end, std::deque<int> &d)
 {
-    std::cout << "Time to process a range of " << d.size() << " elements with std::deque : "
-              << (end - start) / (double)(CLOCKS_PER_SEC / 1000000) << " us"
+    std::cout << "Time to process a range of " << d.size() << " elements with " RED "std::deque " RESET
+              << (end - start) / (double)(CLOCKS_PER_SEC / 1000000) << ": us"
               << std::endl;
 }
 
@@ -25,9 +25,9 @@ void printContainer(std::vector<int> &v, const std::string &str)
     {
         std::cout << *it << " ";
         ss << *it << " ";
-        if (ss.str().size() > w.ws_col / 2)
+        if (ss.str().size() > (w.ws_col / 2) * 3 / 2)
         {
-            std::cout << "[...]" ;
+            std::cout << "[...]";
             break;
         }
     }
@@ -85,7 +85,7 @@ void mergeInsertVec(std::vector<int>::iterator begin, std::vector<int>::iterator
     }
     std::vector<int>::iterator middle = begin + (end - begin) / 2;
     mergeInsertVec(begin, middle);
-    mergeInsertVec(middle , end);
+    mergeInsertVec(middle, end);
     std::inplace_merge(begin, middle, end);
 }
 
@@ -98,7 +98,6 @@ void mergeInsertDeq(std::deque<int>::iterator begin, std::deque<int>::iterator e
     }
     std::deque<int>::iterator middle = begin + (end - begin) / 2;
     mergeInsertDeq(begin, middle);
-    mergeInsertDeq(middle , end);
+    mergeInsertDeq(middle, end);
     std::inplace_merge(begin, middle, end);
 }
-

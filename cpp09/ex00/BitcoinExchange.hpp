@@ -7,5 +7,7 @@
 #include <ctime>
 #include <cstring>
 #include <map>
+#include <cmath>
+
 
 void btc(std::ifstream &file);

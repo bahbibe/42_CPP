@@ -3,9 +3,9 @@
 int main(int ac, char **av)
 {
     if (ac != 2 && std::cout << USAGE << std::endl)
-        return (EXIT_FAILURE);
+        return (1);
     std::string level = av[1];
     Harl h;
     h.complain(level);
-    return (EXIT_SUCCESS);
+    return (0);
 }
