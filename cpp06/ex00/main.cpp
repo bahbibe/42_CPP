@@ -7,9 +7,6 @@ int main(int argc, char const *argv[])
         std::cout << "Usage: ./convert [string]" << std::endl;
         return 1;
     }
-
-    std::string input = argv[1];
-    ScalarConverter::convert(input);
-
+    ScalarConverter::convert(std::string(argv[1]));
     return 0;
 }
